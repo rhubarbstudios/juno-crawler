@@ -109,10 +109,8 @@ function processRestaurant(restaurant) {
 function setNumberOfPages(result) {
   return new Promise(function(resolve, reject) {
     var json = JSON.parse(result);
-    console.log();
-
     numberOfPages = parseInt(Math.ceil(json.search_header.match(/Showing \d+-\d+ of \d+/)[0].split(' ').pop() / 10));
-    numberOfPages = 1;
+    console.log('number of pages found: ', numberOfPages);
     resolve(result);
   });
 }
